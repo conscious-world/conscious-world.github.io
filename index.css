@@ -1,25 +1,21 @@
-/* ---- reset ---- */
 
-body {
-  margin: 0;
-  font:normal 75% Arial, Helvetica, sans-serif;
-  background-color: #26202b;
-}
+/**
+ * Dependencies.
+ */
 
-canvas {
-  display: block;
-  vertical-align: bottom;
-}
+@import 'ianstormtaylor/reset';
+@import 'typefaces/source-sans';
 
-/* ---- particles.js container ---- */
+/**
+ * Base.
+ */
 
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #6c718a;
-  background-image: url("http://www.nasa.gov/sites/default/files/thumbnails/image/iss044e045542.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-}
+@import './lib/base';
+
+/**
+ * Components.
+ */
+
+@import './lib/main';
+@import './lib/header';
+@import './lib/footer';

@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+
+var Duo = require('duo');
+var markdown = require('metalsmith-markdown');
+var metadata = require('metalsmith-metadata');
+var Metalsmith = require('metalsmith');
+var myth = require('myth');
+var resolve = require('path').resolve;
+var templates = require('metalsmith-templates');
+var write = require('fs').writeFileSync;
+
+/**
+ * Settings.
+ */
+
+var root = resolve(__dirname, '..');
+var src = 'src';
+var dest = 'build';
+
+/**
+ * Metalsmith.
+ */
+
+var metalsmith = new Metalsmith(root)
+  .clean(false)
+  .source(src)
+  .destination(dest)
+  .use([
+    templates({ pattern: 'index.md', engine: 'handlebars', inPlace: true }),
+    markdown({ smartypants: true }),
+    templates({ directory: '.', engine: 'handlebars', })
+  ]);
+
+/**
+ * Duo.
+ */
+
+var duo = Duo(root)
+  .buildTo(dest)
+  .copy(true)
+  .development(true)
+  .entry('index.css');
+
+/**
+ * Deploy.
+ */
+
+metalsmith.build(function(err){
+  if (err) throw err;
+  duo.run(function(err, res){
+    if (err) throw err;
+    var css = myth(res.code);
+    var file = resolve(root, dest, 'index.css');
+    write(file, css);
+  });
+});

@@ -1,0 +1,44 @@
+/**
+ * Variables.
+ */
+
+:root {
+  --white: #fafafa;
+  --light-gray: #ccc;
+  --dark-gray: #29272a;
+  --black: #212022;
+  --red: #c75252;
+}
+
+/**
+ * Base.
+ */
+
+body {
+  font: 300 16px/1.5 "Source Sans", sans-serif;
+  color: var(--light-gray);
+  background-color: var(--dark-gray);
+}
+
+a {
+  color: var(--white);
+  text-decoration: underline;
+  transition: color .2s;
+}
+
+a:hover {
+  color: var(--red);
+}
+
+pre {
+  font: 300 12px/1.3 "Source Code", monospace;
+}
+
+pre em {
+  font-style: normal;
+  color: var(--red);
+}
+
+p {
+  margin-bottom: 1em;
+}

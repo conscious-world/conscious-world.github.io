@@ -1,0 +1,75 @@
+/**
+ * Header.
+ */
+
+.Header {
+  padding-top: 10em;
+  padding-bottom: 6em;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.Header-title {
+  font-size: 5em;
+  margin-bottom: 1.5em;
+  opacity: .95;
+}
+
+.Header-description {
+  color: var(--white);
+  font-size: 1.2em;
+  max-width: 25em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Header-github-link {
+  display: block;
+  position: absolute;
+  top: 3em;
+  right: -6.5em;
+  padding: 1em;
+  width: 20em;
+  text-align: center;
+  background-color: var(--black);
+  text-transform: uppercase;
+  font-size: .6em;
+  color: var(--white);
+  letter-spacing: 1px;
+  text-decoration: none;
+  white-space: nowrap;
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+}
+
+.Header-github-link:hover {
+  font-weight: normal;
+  color: var(--white);
+}
+
+/**
+ * Large screens.
+ */
+
+@media (min-width: 768px) {
+
+  .Header {
+    padding: 6em 2em;
+  }
+
+  .Header {
+    font-size: 1.2em;
+    padding-top: 20%;
+  }
+
+  .Header-subtitle {
+    font-size: 1.8em;
+  }
+
+  .Header-github-link {
+    top: 4em;
+    right: -5em;
+  }
+
+}

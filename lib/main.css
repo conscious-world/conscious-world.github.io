@@ -1,0 +1,23 @@
+
+/**
+ * Main.
+ */
+
+.Main {
+  max-width: 34em;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.Main pre {
+  background-color: var(--black);
+  padding: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.Main pre + pre {
+  margin-top: calc(-2em + 1px);
+}
